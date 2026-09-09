@@ -1,0 +1,20 @@
+# Dados corporativos e resultados de consulta
+/data/
+/exports/
+/extratos/
+*.csv
+*.xlsx
+*.xls
+*.pdf
+
+# Credenciais e conexões locais
+.env
+.env.*
+!/config/ambientes.example.json
+/config/ambientes.local.json
+
+# Scripts e materiais com parâmetros reais
+/local/operacional/
+
+# Arquivos locais do VS Code
+.vscode/*.local.json

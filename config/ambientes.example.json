@@ -1,0 +1,19 @@
+{
+  "ambientes": [
+    {
+      "nome": "TAG",
+      "servidor": "PREENCHER_LOCALMENTE",
+      "banco": "PREENCHER_LOCALMENTE"
+    },
+    {
+      "nome": "VIAVANTE",
+      "servidor": "PREENCHER_LOCALMENTE",
+      "banco": "PREENCHER_LOCALMENTE"
+    },
+    {
+      "nome": "TDE-SQL01",
+      "servidor": "PREENCHER_LOCALMENTE",
+      "banco": "PREENCHER_LOCALMENTE"
+    }
+  ]
+}

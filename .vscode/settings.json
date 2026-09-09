@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.sql": "sql"
+  },
+  "editor.formatOnSave": true,
+  "[sql]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "on"
+  }
+}
