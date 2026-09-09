@@ -13,8 +13,10 @@
 !/config/ambientes.example.json
 /config/ambientes.local.json
 
-# Scripts e materiais com parâmetros reais
-/local/operacional/
+# Scripts e materiais corporativos com parâmetros reais
+# Mantemos somente o README público; o restante de /local nunca vai ao GitHub.
+/local/**
+!/local/README.md
 
 # Arquivos locais do VS Code
 .vscode/*.local.json
