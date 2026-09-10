@@ -1,0 +1,8 @@
+{
+  "intervalo_segundos": 300,
+  "atraso_maximo_multiplos": 2,
+  "sobreposicao_segundos": 300,
+  "cache_path": "local/cache/meu_primeiro_banco.db",
+  "consulta_extracao_path": "local/operacional/relatorios_recebidos/sql/boletos_recebidos_extracao.sql",
+  "unidades": ["TAG", "VIAVANTE", "STCOOP", "SEGTRUCK"]
+}

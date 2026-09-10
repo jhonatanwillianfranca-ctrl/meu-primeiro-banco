@@ -20,3 +20,15 @@
 
 # Arquivos locais do VS Code
 .vscode/*.local.json
+
+# Ambiente Python local
+.venv/
+
+# Agentes locais do VS Code com contexto corporativo. Não publicar.
+/.github/agents/
+
+# Parametros operacionais dos relatorios e do cache local
+/config/carteiras.local.json
+/config/recebidos.local.json
+/config/sync.local.json
+/local/cache/

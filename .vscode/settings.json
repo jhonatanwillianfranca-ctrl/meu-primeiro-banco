@@ -1,4 +1,5 @@
 {
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
   "files.associations": {
     "*.sql": "sql"
   },
@@ -7,5 +8,10 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "editor.wordWrap": "on"
+  },
+  "chat.tools.edits.autoApprove": {
+    "**/local/operacional/engenharia_reversa_don/analises/**/*.md": true,
+    "**/local/operacional/engenharia_reversa_don/CONTINUIDADE.md": true,
+    "**": false
   }
 }
