@@ -32,3 +32,6 @@
 /config/recebidos.local.json
 /config/sync.local.json
 /local/cache/
+__pycache__/
+*.py[cod]
+!tools/agente_don/.env.example
