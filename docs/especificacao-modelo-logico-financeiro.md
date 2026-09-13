@@ -1,8 +1,8 @@
 # Especificação viva — modelo lógico financeiro
 
-**Versão:** 0.2  
+**Versão:** 0.3
 **Atualizada em:** 13/09/2026  
-**Estado:** migration SQLite m001 aplicada no cache técnico local em 13/09/2026; validada por testes automatizados
+**Estado:** migration SQLite m001 aplicada no cache técnico local; script de transformação validado somente com dados fictícios
 
 ## Objetivo e limites
 
@@ -78,6 +78,21 @@ O schema atual em `db/cache_local.py` é técnico e permanece separado do núcle
 | `sync_estado` e `sync_log` | Controle técnico da sincronização | Nenhuma entidade financeira | Devem permanecer como controle técnico. |
 
 As regras existentes em `docs/regras-de-negocio.md` continuam aplicáveis apenas ao relatório de títulos pagos e às condições já documentadas. Elas não definem, por si só, o novo núcleo financeiro completo.
+
+## Transformação a partir do staging técnico
+
+O script `db/carregar_nucleo_financeiro.py` foi implementado e testado exclusivamente com fixtures sintéticas em SQLite temporário. Ele lê `titulos_movimento` e grava título, parcela e liquidação no núcleo financeiro, preservando em cada registro `origem = titulos_movimento`, identificador externo, data de carga e regra aplicada.
+
+Regras aplicadas nesta primeira versão:
+
+- `unidade` é usada apenas como referência provisória da empresa; a homologação contra cadastro corporativo continua pendente.
+- `CLIENTE` pode criar pessoa com papel `CLIENTE`; nunca cria fornecedor por inferência.
+- `CARTEIRA` não cria nem vincula conta financeira automaticamente.
+- Cada registro de origem produz uma parcela, porque o parcelamento original não está disponível no staging atual.
+- `DATA_BAIXA` e `VALOR_BAIXA` geram liquidação financeira quando ambos existirem e o valor for diferente de zero; não geram conciliação bancária.
+- A carga é idempotente por identificadores técnicos determinísticos. Se futuramente houver repetição de identificador externo entre unidades, a regra de unicidade deverá ser revisada antes de uma carga real.
+
+**Status de carga real:** pendente de sincronização autorizada com SQL Server. Não há dado financeiro real disponível no projeto e nenhuma carga real foi executada.
 
 ## Diretriz de implementação futura
 
